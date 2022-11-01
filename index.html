@@ -1,201 +1,602 @@
 <!DOCTYPE html>
-<html>
+<!--
 
+
+
+
+
+
+⣿⣿⣿⣿⣿⣿⣧⢸⡿⣟⣿⡇⢸⣯⣟⣮⢧⡈⢿⣞⡿⣦⠘⠏⣹⣿⣽⢿⣿⣿⣿⣿⣯⣿⣿⣿⡇⢸⣿⣿⣾⡆⠹⢀⣠⣾⣟⣷⡈⢿
+⣿⣿⣿⣿⣿⣿⣿⡈⣿⢿⣽⡇⠘⠛⠛⠛⠓⠓⠈⠛⠛⠟⠇⢀⢿⣻⣿⣯⢿⣿⣿⣿⣷⢿⣿⣿⠁⣾⣿⣿⣿⣧⡄⠇⣹⣿⣾⣯⣿⡄
+⣿⣿⣿⣿⣿⣿⣿⡇⢹⣿⡽⡇⢸⣿⣿⣿⣿⣿⣞⣆⠰⣶⣶⡄⢀⢻⡿⣯⣿⡽⣿⣿⣿⢯⣟⡿⢀⣿⣿⣿⣿⣿⣧⠐⣸⣿⣿⣷⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⠘⣯⡿⡇⢸⣿⣿⣿⣿⣿⣿⣿⣧⡈⢿⣳⠘⡄⠻⣿⢾⣽⣟⡿⣿⢯⣿⡇⢸⣿⣿⣿⣿⣿⣿⡀⢾⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⡇⢹⣿⠇⢸⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⠻⡇⢹⣆⠹⣟⣾⣽⣻⣟⣿⣽⠁⣾⣿⣿⣿⣿⣿⣿⣇⣿⣿⠿⠛⠛⠉
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⡈⣿⡃⢼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡙⠌⣿⣆⠘⣿⣞⡿⣞⡿⡞⢠⣿⣿⣿⣿⣿⡿⠛⠉⠁⢀⣀⣠⣤⣤
+⣿⣿⣿⣿⣿⣿⣿⣿⡿⠃⠘⠁⠉⠉⠉⠉⠉⠉⠉⠉⠉⠙⠛⠛⢿⣄⢻⣿⣧⠘⢯⣟⡿⣽⠁⣾⣿⣿⣿⣿⣿⡃⢀⢀⠘⠛⠿⢿⣻⣟
+⣿⣿⣿⣟⣿⣿⣿⣿⣶⣶⡆⢀⣿⣾⣿⣾⣷⣿⣶⠿⠚⠉⢀⢀⣤⣿⣷⣿⣿⣷⡈⢿⣻⢃⣼⣿⣿⣿⣿⣻⣿⣿⣿⡶⣦⣤⣄⣀⡀⠉
+⣿⢿⣿⣿⣻⣿⣿⣿⣿⣿⡿⠐⣿⣿⣿⣿⠿⠋⠁⢀⢀⣤⣾⣿⣿⣿⣿⣿⣿⣿⣿⣌⣥⣾⡿⣿⣿⣷⣿⣿⢿⣷⣿⣿⣟⣾⣽⣳⢯⣟
+⣿⣻⣿⣿⡷⣿⣿⣿⣿⣿⡗⣦⠸⡿⠋⠁⢀⢀⣠⣴⢿⣿⣽⣻⢽⣾⣟⣷⣿⣟⣿⣿⣿⣳⠿⣵⣧⣼⣿⣿⣿⣿⣿⣾⣿⣿⣿⣿⣿⣽
+⣿⢷⣻⣿⣿⣷⣻⣿⣿⣿⡷⠛⣁⢀⣀⣤⣶⣿⣛⡿⣿⣮⣽⡻⣿⣮⣽⣻⢯⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠸⣟⣯⣿⣿⣷⢿⣽⣿⣿⣷⣿⣷⣆⠹⣿⣶⣯⠿⣿⣶⣟⣻⢿⣷⣽⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣇⠹⣟⣾⣻⣿⣿⢾⡽⣿⣿⣿⣿⣿⣆⢹⣶⣿⣻⣷⣯⣟⣿⣿⣽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣆⠹⣷⡻⣽⣿⣯⢿⣽⣻⣿⣿⣿⣿⣆⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠛⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⡙⠾⣆⠹⣿⣦⠛⣿⢯⣷⢿⡽⣿⣿⣿⣿⣆⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠎⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣷⡌⢦⠙⣿⣿⣌⠻⣽⢯⣿⣽⣻⣿⣿⣿⣧⠩⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡏⢰⢣⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣽⣆⠹⣧⠘⣿⣿⡷⣌⠙⢷⣯⡷⣟⣿⣿⣿⣷⡀⡹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣈⠃⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⢻⣽⣿⡄⢻⣷⡈⢿⣿⣿⢧⢀⠙⢿⣻⡾⣽⣻⣿⣿⣄⠌⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠛
+⡄⢿⣿⣷⢀⠹⣟⣆⠻⣿⣿⣆⢀⣀⠉⠻⣿⡽⣯⣿⣿⣷⣈⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⢀⣠
+
+ Time: 2021-11-3   原创：庞金明
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->
+
+
+
+<html lang="zh-CN">
 <head>
-    <!-- 基础信息 -->
-    <meta charset="utf-8">
-    <meta name="renderer" content="webkit" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="force-rendering" content="webkit" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="無名の主页">
-    <meta name="keywords" content="無名,个人主页">
-    <meta name="author" content="無名">
-    <title>無名の主页</title>
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
-    <link rel="stylesheet" type="text/css" href="./css/iconfont.css">
-    <link rel="apple-touch-icon" href="./images/apple-touch-icon.png">
-    <link rel="icon" href="./favicon.ico">
-    <!--引入SweetAlert
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert@2.1.2/dist/sweetalert.min.js"></script>-->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.all.min.js"></script>
-    <!--引入izitoast-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/css/iziToast.min.css">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/js/iziToast.min.js"></script>
-    <!--引入fontawesome-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fontawesome-pro@master/css/all.min.css"
-        media="all">
-    <!--百度站长平台-->
-    <script>
-        var _hmt = _hmt || [];
-        (function () {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?14e9f35ff8bc67fd4bcb5f07a6e6655a";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
-    <!--IE淘汰计划-->
-    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href = "https://imsyy.top/upgrade-your-browser/index.html?referrer=" + encodeURIComponent(window.location.href);</script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anle | 一款酷黑风个人引导页</title>  
+<!--页面核心样式-->
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<!--页面核心JS-->
+<script type="text/javascript" src="js/uaredirect.js"></script>
+<script type="text/javascript">browserRedirect("/m");</script>
+<script src="https://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/respond.min.js"></script>
 </head>
+<body>
+<div class="container slideTxtBox">
+    <div class="header flex flex-pack-justify flex-align-center">
+    <div class="user-info flex flex-align-center">
+        <div class="portrait"><img src="https://www.x6g.com/static/images/logo.png" ></div>
+        <div class="name PangMenZhengDao">面包云idc.mianby.cn</div><!--左上角 Logo+站名-->
+    </div>
+    <div class="link te_c p_r hd">
+		<ul class="flex flex-align-center">
+			<li class="p_r"><a href="javascript:void(0);" class="transition OPPOSans-R di_bl">关于我</a></li>
+			<li class="p_r"><a href="javascript:void(0);" class="transition OPPOSans-R di_bl">朋友们</a></li>
+		</ul>
+		<div class="move-bg"></div><!--右上方 部件-->
+	</div>
+	</div>
 
-<body oncontextmenu=self.event.returnValue=false onselectstart="return false">
-    <!--<span class="mobile btn-mobile-menu">
-        <i class="social iconfont icon-list btn-mobile-menu__icon"></i>
-        <i class="social iconfont icon-ngleup btn-mobile-close__icon hidden"></i>
-    </span>-->
-    <header id="panel" class="panel-cover">
-        <div class="panel-main">
-            <div class="panel-main__inner panel-inverted">
-                <div class="panel-main__content">
-                    <div class="ih-item circle effect right_to_left">
-                        <a class="blog-button">
-                            <div class="img"><img src="./images/logo.png" alt="img" class="js-avatar iUp profilepic">
-                            </div>
-                            <div class="info iUp">
-                                <div class="info-back">
-                                    <h2>Fighting</h2>
-                                    <p>2021 · 努力中</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <h1 class="panel-cover__title panel-title iUp">
-                        <br />hello
-                    </h1>
-                    <p class="panel-cover__subtitle panel-subtitle iUp">Welcome to my website</p>
-                    <hr class="panel-cover__divider iUp" />
-                    <!--一言无法显示时的文字-->
-                    <p id="description" class="panel-cover__description iUp">每一个人都应该明确自己的方向和位置
-                        <br />
-                        <strong>-「無名」</strong>
-                    </p>
-                    <div class="navigation-wrapper iUp">
-                        <div>
-                            <nav class="cover-navigation cover-navigation--primary">
-                                <ul class="navigation">
-                                    <li class="navigation__item">
-                                        <a href="/" target="_blank" class="blog-button">
-                                            <div>博客</div>
-                                        </a>
-                                    </li>
-                                    <li class="navigation__item">
-                                        <!--<a onclick="update()" class="blog-button">-->
-                                        <a href="/" target="_blank" class="blog-button">
-                                            <div>网盘</div>
-                                        </a>
-                                    </li>
-                                    <li class="navigation__item">
-                                        <a href="/" target="_blank" class="blog-button">
-                                            <div>导航</div>
-                                        </a>
-                                    </li>
-                                    <li class="navigation__item">
-                                        <a href="/" target="_blank" class="blog-button">
-                                            <div>音乐</div>
-                                        </a>
-                                    </li>
-                                    <li class="navigation__item">
-                                        <a href="/" class="blog-button">
-                                            <div>前往新版</div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <div class="iUp">
-                            <nav class="cover-navigation navigation--social">
-                                <ul class="navigation">
+<!--页面内容-->	
+<div class="bd">
+<!--左侧小部件-MacBook Air-->
+<div class="content p_r">
+	<div class="en_box flex flex-align-center flex-pack-center">
+	<div class="macbook">
+  <div class="inner">
+    <div class="screen">
+      <div class="face-one">
+        <div class="camera"></div>
+        <div class="display">
+          <div class="shade"></div>
+        </div>
+      </div>
+      <img src="http://www.clker.com/cliparts/i/s/H/f/4/T/apple-logo-white.svg" class="logo">
+    </div>
+    <div class="body">
+      <div class="face-one">
+        <div class="touchpad">
+        </div>
+        <div class="keyboard">
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key space"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key"></div>
+          <div class="key f"></div>
+          <div class="key f"></div>
+          <div class="key f"></div>
+          <div class="key f"></div>
+          <div class="key f"></div>
+          <div class="key f"></div>
+          <div class="key f"></div>
+          <div class="key f"></div>
+          <div class="key f"></div>
+          <div class="key f"></div>
+          <div class="key f"></div>
+          <div class="key f"></div>
+          <div class="key f"></div>
+          <div class="key f"></div>
+          <div class="key f"></div>
+          <div class="key f"></div>
+        </div>
+      </div>
+      <div class="pad one"></div>
+      <div class="pad two"></div>
+      <div class="pad three"></div>
+      <div class="pad four"></div>
+    </div>
+  </div>
+  <div class="shadow"></div>
+</div>
+</div>
 
-                                    <li class="navigation__item">
-                                        <a href="/" title="Github" target="_blank">
-                                            <i class="fas fa-code-branch"></i>
-                                            <span class="label">Github</span>
-                                        </a>
-                                    </li>
-                                    <li class="navigation__item">
-                                        <a href="/" title="Telegram" target="_blank">
-                                            <i class="fab fa-telegram-plane"></i>
-                                            <span class="label">Telegram</span>
-                                        </a>
-                                    </li>
-                                    <li class="navigation__item">
-                                        <a href="/" title="Twitter" target="_blank">
-                                            <i class="fab fa-twitter"></i>
-                                            <span class="label">Twitter</span>
-                                        </a>
-                                    </li>
-                                    <li class="navigation__item">
-                                        <a href="/" title="QQ"
-                                            target="_blank">
-                                            <i class="fab fa-qq"></i>
-                                            <span class="label">QQ</span>
-                                        </a>
-                                    </li>
-                                    <li class="navigation__item">
-                                        <a onclick="weixin()" title="微信" target="_blank">
-                                            <i class="fab fa-weixin"></i>
-                                            <script>
-                                                function weixin() {
-                                                    Swal.fire({
-                                                        title: "请扫码",
-                                                        text: "请使用微信扫一扫",
-                                                        confirmButtonText: "好的",
-                                                        imageUrl: "./images/weixin.png",
-                                                        imageWidth: 150,
-                                                        imageHeight: 150
-                                                    })
-                                                }
-                                            </script>
-                                        </a>
-                                    </li>
-                                    <li class="navigation__item">
-                                        <a href="/" title="Email">
-                                            <i class="fas fa-envelope"></i>
-                                            <span class="label">Email</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="panel-cover--overlay cover-slate"></div>
+<!--居中内容-->
+<div class="r_content">	
+	<div class="con p_r flex">
+	 <!--你的名字-->   
+	<div class="name flex flex-align-center flex-pack-center OPPOSans-M p_r" id="one_part">
+	面包云
+	<div class="tips te_c OPPOSans-B transition"><span class="p_r c1">455px</span></div>
+	</div>
+	
+	<!--小部件-GIF-->
+	<div class="flex flex-align-center flex-pack-center iphone"><img src="images/icon_APP.gif"></div>
+	<div class="flex flex-align-center flex-pack-center web"><img src="images/icon_WEB.gif"></div>
+	<div class="flex flex-align-center flex-pack-center vr"><img src="images/icon_VR.gif"></div>
+	</div>
+	
+	<!--个人定位-->
+    <div class="p_r flex con1">
+	<div class="txt_box p_r">
+	<div class="txt_con p_r flex">
+	<div class="ui flex flex-align-center flex-pack-center p_r OPPOSans-M flex-1" id="two_part">
+	前端爱好者
+	<div class="tips transition te_c OPPOSans-B transition flex flex-align-center flex-pack-center">
+	<span class="p_r">127px</span>
+	</div>
+	</div>
+	
+	<!--小部件-音乐-->
+    <div class="wx flex flex-align-center flex-pack-center p_r" id="three_part">
+    <audio src="https://m8.music.126.net/20211103183235/79c21ea30480cb2566d5bd8709ef4fc5/ymusic/3b1d/91a2/887d/e4830ab3e11f0421964838effd3c6bfd.mp3" controls="controls" preload id="music1" hidden>
+    </audio>
+    <span class="holder" id="bf" onclick="bf();">Music</span>
+    <div class="tips te_c OPPOSans-B transition">
+	<span class="p_r c2">70px</span>
+	</div>
+	</div>
+	</div>
+	
+	<!--个人简介-->
+	<div class="text OPPOSans-M p_r transition" id="four_part">
+	<span class="p_r di_in">2021年，秋 我终究还是没能改掉这个毛病</span>
+	</div>
+	</div>
+	
+	<!--个人头像-->
+	<div class="pic flex flex-align-center flex-pack-center " id="five_part">
+	    <img src="https://q1.qlogo.cn/g?b=qq&nk=476666&s=640" >
+	</div>
+	                          <!--触发器-->
+					<div class="focus p_r OPPOSans-M">
+						<div class="txt" style="display: block;" id="default">
+							position: <span class="c1">absolute</span>;<br>
+							width: <span class="c2">0px</span>;<br>
+							height: <span class="c2">0px</span>;<br>
+							left: <span class="c2">0px</span>;<br>
+							top: <span class="c2">0px</span>;<br>
+							font-family: <span class="c1">OPPOSans</span>;<br>
+							font-style: <span class="c1">normal</span>;<br>
+							font-weight: <span class="c2">0</span>;<br>
+							font-size: <span class="c2">0px</span>;<br>
+							line-height: <span class="c2">0px</span>;
+						</div>
+						<div class="txt" id="one">
+							position: <span class="c1">absolute</span>;<br>
+							width: <span class="c2">357px</span>;<br>
+							height: <span class="c2">157px</span>;<br>
+							left: <span class="c2">336px</span>;<br>
+							top: <span class="c2">101px</span>;<br>
+							font-family: <span class="c1">OPPOSans</span>;<br>
+							font-style: <span class="c2">normal</span>;<br>
+							font-weight: <span class="c2">500</span>;<br>
+							font-size: <span class="c2">119px</span>;<br>
+							line-height: <span class="c2">157px</span>
+						</div>
+						<div class="txt" id="two">
+							position: <span class="c1">absolute</span>;<br>
+							width: <span class="c2">194px</span>;<br>
+							height: <span class="c2">63px</span>;<br>
+							left: <span class="c2">336px</span>;<br>
+							top: <span class="c2">312px</span>;<br>
+							font-family: <span class="c1">OPPOSans</span>;<br>
+							font-style: <span class="c1">normal</span>;<br>
+							font-weight: <span class="c2">500</span>;<br>
+							font-size: <span class="c2">48px</span>;<br>
+							line-height: <span class="c2">63px</span>;
+						</div>
+						<div class="txt" id="three">
+							position: <span class="c1">absolute</span>;<br>
+							width: <span class="c2">78px</span>;<br>
+							height: <span class="c2">58px</span>;<br>
+							left: <span class="c2">621px</span>;<br>
+							top: <span class="c2">315px</span>;<br>
+							Wechat: <span class="c1">Joreking8</span>;
+						</div>
+						<div class="txt" id="four">
+							position: <span class="c1">absolute</span>;<br>
+							width: <span class="c2">375px</span>;<br>
+							height: <span class="c2">75px</span>;<br>
+							left: <span class="c2">336px</span>;<br>
+							top: <span class="c2">439px</span>;<br>
+							font-family: <span class="c1">OPPOSans</span>;<br>
+							font-style: <span class="c2">normal</span>;<br>
+							font-weight: <span class="c2">500</span>;<br>
+							font-size: <span class="c2">16px</span>;<br>
+							line-height: <span class="c2">149.1%</span>;
+						</div>
+<!--头像触发器-->						
+<div class="txt" id="five">
+	<br>
+	喜欢别人家的老婆~
+	<br>
+	<br>
+	╭∞━━━╮.oO◎
+	<br>
+	┃  ┃
+	<br>
+	┃● ●┃
+	<br>
+	┃﹋  ε  ﹋ ┃
+	<br>
+	○━━━━╯
+</div>
+</div>
+
+<!--右侧内容-->
+<div class="works p_r OPPOSans-M">
+<div class="txt">
+具备Windows、Linux开关机操作，翻墙学习日外语言能力、白嫖熟练度100%，有较强的前端剽窃经验。
+</div>
+<div class="lock transition p_r">
+<input type="text" id="code" value="" placeholder="请输入提取码" class="OPPOSans-M"/>
+<div class="error" id="code_error">提取码错误</div>
+</div>
+<div class="submit" id="btn">
+<a href="javascript:void(0);" class="di_bl te_c my">秘密入口</a>
+<a href="https://www.x6g.com" id="down" class="di_bl te_c down">下载</a>
+</div>
+</div>
+</div>
+
+<!--下方内容-->
+<div class="p_r tool_content flex flex-align-center">
+<div class="sns flex ">
+<div class="flex-center">
+<!--小部件-微信-->
+<i class="fa fa-weixin fa-siz icon-3d wx p_r transition">
+    <div class="erwma transition"><img src="images/vx.png"></div>
+</i>
+<!--小部件-邮箱-->                        
+<a href="javascript:void(0);" class="di_bl copy" data-clipboard-action="copy" data-clipboard-target="#foo" id="mail">		
+<i class="fa fa-envelope-o fa-siz icon-3d mail p_r">
+    <div class="copytxt te_c OPPOSans-M transition" id="copyed">已复制</div>
+    <input id="foo" type="text" value="x6dtousu@gmail.com">
+</i></a>
+<!--小部件-其他-->
+<a href="" target="_blank"><i class="fa fa-github fa-siz icon-3d"></i></a>
+<a href="" target="_blank"><i class="fa fa-qq fa-siz icon-3d"></i></a>
+<a href="" target="_blank"><i class="fa fa-telegram fa-siz icon-3d"></i></a>
+<a href="" target="_blank"><i class="fa fa-weibo fa-siz icon-3d"></i></a>
+</div>
+</div>
+<div class="text OPPOSans-M">然后知生于忧患而死于安乐<br>
+<p>Then know born in sorrow died in peace and happiness</p>
+</div>
+</div>
+</div>
+</div>
+
+<!--翻页内容-->		
+<div class="warp" id="content">
+<div class="txt OPPOSans-R">兴趣使然做的一些小东西</div>
+<ul class="flex flex-warp">
+    <li class="transition">
+        <div class="icon">
+            <a href="https://www.x6g.com" target="_blank"><img src="https://q1.qlogo.cn/g?b=qq&nk=327893&s=640" ></a>
         </div>
-        <div class="remark iUp">
-            <p class="power">Copyright © 2020
-                <script>document.write(' - ' + (new Date()).getFullYear())</script> 無名
-            </p>
-        </div>
-    </header>
-    <!--izitoast弹窗设置-->
-    <script>
-        iziToast.settings({
-            timeout: 4000,//调试
-            icon: 'Fontawesome',
-            closeOnEscape: 'true',
-            position: 'topRight',
-            transitionOut: 'fadeOutRight',
-            displayMode: '2',
-            layout: '2',
-            transitionIn: 'bounceInLeft',
-        });
-    </script>
-    <!--izitoast内容-->
-    <script>
-        function update() {
-            iziToast.info({
-                icon: 'fad fa-times-octagon',
-                backgroundColor: '#efefef',
-                title: '站点暂时关闭',
-                message: '只是出现了一点小问题 ~'
-            });
-        }
-    </script>
-    <script type="text/javascript" src="./js/jquery.min.js"></script>
-    <script type="text/javascript" src="./js/fetch.min.js"></script>
-    <script type="text/javascript" src="./js/main.js"></script>
+            <h3 class="OPPOSans-M ellipsis"><a href="https://www.x6g.com" target="_blank">面包云idc.mianby.cn</a></h3>
+            <p class="OPPOSans-M ellipsis">面包云idc.mianby.cn</p>
+    </li>
+</ul>
+<style>
+
+</style>
+<canvas id="background"></canvas>
+</div>
+</div>
+</div>
+
+<script src="js/jquery.SuperSlide.2.1.1.js"></script>
+<script>jQuery(".slideTxtBox").slide({});</script>
+<!-- 滑动效果 -->
+<script src="js/jquery.movebg.js"></script>
+<script>
+$(function(){
+	$(".link").movebg({width:125/*滑块的大小*/,extra:40/*额外反弹的距离*/,speed:300/*滑块移动的速度*/,rebound_speed:400/*滑块反弹的速度*/});
+})
+</script>
+<link rel="stylesheet" type="text/css" href="css/font.css"/>
+<script src="js/clipboard.min.js"></script>
+<script>//复制
+	var clipboard = new Clipboard('.copy');
+	clipboard.on('success', function(e) {
+		console.log(e);
+	});
+	clipboard.on('error', function(e) {
+		console.log(e);
+	});
+	$('#mail').click(function(){
+		$('#copyed').css('opacity',1)
+			setTimeout(function(){
+			$('#copyed').css('opacity',0)
+		},2000)
+	})
+	$('#one_part,#two_part,#three_part,#four_part,#five_part').hover(function(){
+		var that = $(this)
+		var target = that.attr('id').replace('_part','')
+		$('.focus .txt').hide()
+		$('#'+target).show()
+	},function(){
+		$('.focus .txt').hide()
+		$('#default').show()
+	})
+	$('#code').focus(function(){
+		$('#code').attr('placeholder','请输入提取码')
+		$('#code_error').hide()
+	})
+	$('#down').click(function(){
+		var that = $(this)
+		var code = $('#code').val();
+		if(code != 'anlenotes'){ //提取码
+			$('#code').attr('placeholder','').val('')
+			$('#code_error').show()
+			return false;
+		}
+		that.attr('href','https://www.x6g.com')//提取码成功跳转地址
+		that.attr('target','_blank')
+	})
+</script>
+<!-- 下载 -->
+<script>
+	const btn = document.querySelector("#btn");
+	const item = document.querySelectorAll(".lock");
+	let showCard = (event) => {
+		btn.classList.toggle("is-rotate");
+		for (var i = 0; i < item.length; i++) {
+			item[i].classList.toggle(`on`);
+		}
+	}
+	btn.addEventListener("click", showCard);
+</script>
+<!--音乐-->
+<script>
+function rbf(){
+ var audio = document.getElementById('music1'); 
+ audio.currentTime = 0;
+}
+function bf(){
+ var audio = document.getElementById('music1'); 
+ if(audio!==null){             
+     alert(audio.paused);
+  if(audio.paused)                     {                 
+      audio.play('播放');  
+  }else{
+   audio.pause('暂停');
+  }
+ } 
+}
+   
+</script>
+<script>
+try {
+	if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+
+	} else {
+
+			var canvas = document.querySelector('canvas'),
+				ctx = canvas.getContext('2d')
+				canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+			ctx.lineWidth = .3;
+			ctx.strokeStyle = (new Color(150)).style;
+
+			var mousePosition = {
+				x: 30 * canvas.width / 100,
+				y: 30 * canvas.height / 100
+			};
+
+			var dots = {
+				nb: 250,
+				distance: 100,
+				d_radius: 150,
+				array: []
+			};
+
+			function colorValue(min) {
+				return Math.floor(Math.random() * 255 + min);
+			}
+
+			function createColorStyle(r, g, b) {
+				return 'rgba(' + r + ',' + g + ',' + b + ', 0.8)';
+			}
+
+			function mixComponents(comp1, weight1, comp2, weight2) {
+				return (comp1 * weight1 + comp2 * weight2) / (weight1 + weight2);
+			}
+
+			function averageColorStyles(dot1, dot2) {
+				var color1 = dot1.color,
+					color2 = dot2.color;
+
+				var r = mixComponents(color1.r, dot1.radius, color2.r, dot2.radius),
+					g = mixComponents(color1.g, dot1.radius, color2.g, dot2.radius),
+					b = mixComponents(color1.b, dot1.radius, color2.b, dot2.radius);
+				return createColorStyle(Math.floor(r), Math.floor(g), Math.floor(b));
+			}
+
+			function Color(min) {
+				min = min || 0;
+				this.r = colorValue(min);
+				this.g = colorValue(min);
+				this.b = colorValue(min);
+				this.style = createColorStyle(this.r, this.g, this.b);
+			}
+
+			function Dot() {
+				this.x = Math.random() * canvas.width;
+				this.y = Math.random() * canvas.height;
+
+				this.vx = -.5 + Math.random();
+				this.vy = -.5 + Math.random();
+
+				this.radius = Math.random() * 2;
+
+				this.color = new Color();
+				console.log(this);
+			}
+
+			Dot.prototype = {
+				draw: function() {
+					ctx.beginPath();
+					ctx.fillStyle = this.color.style;
+					ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+					ctx.fill();
+				}
+			};
+
+			function createDots() {
+				for (i = 0; i < dots.nb; i++) {
+					dots.array.push(new Dot());
+				}
+			}
+
+			function moveDots() {
+				for (i = 0; i < dots.nb; i++) {
+
+					var dot = dots.array[i];
+
+					if (dot.y < 0 || dot.y > canvas.height) {
+						dot.vx = dot.vx;
+						dot.vy = -dot.vy;
+					} else if (dot.x < 0 || dot.x > canvas.width) {
+						dot.vx = -dot.vx;
+						dot.vy = dot.vy;
+					}
+					dot.x += dot.vx;
+					dot.y += dot.vy;
+				}
+			}
+
+			function connectDots() {
+				for (i = 0; i < dots.nb; i++) {
+					for (j = 0; j < dots.nb; j++) {
+						i_dot = dots.array[i];
+						j_dot = dots.array[j];
+
+						if ((i_dot.x - j_dot.x) < dots.distance && (i_dot.y - j_dot.y) < dots.distance && (i_dot.x - j_dot.x) > -dots.distance && (i_dot.y - j_dot.y) > -dots.distance) {
+							if ((i_dot.x - mousePosition.x) < dots.d_radius && (i_dot.y - mousePosition.y) < dots.d_radius && (i_dot.x - mousePosition.x) > -dots.d_radius && (i_dot.y - mousePosition.y) > -dots.d_radius) {
+								ctx.beginPath();
+								ctx.strokeStyle = averageColorStyles(i_dot, j_dot);
+								ctx.moveTo(i_dot.x, i_dot.y);
+								ctx.lineTo(j_dot.x, j_dot.y);
+								ctx.stroke();
+								ctx.closePath();
+							}
+						}
+					}
+				}
+			}
+
+			function drawDots() {
+				for (i = 0; i < dots.nb; i++) {
+					var dot = dots.array[i];
+					dot.draw();
+				}
+			}
+
+			function animateDots() {
+				ctx.clearRect(0, 0, canvas.width, canvas.height);
+				moveDots();
+				//connectDots();
+				drawDots();
+
+				requestAnimationFrame(animateDots);
+			}
+
+
+			createDots();
+			requestAnimationFrame(animateDots);
+
+	}
+} catch (e) {}
+</script>
 </body>
-
 </html>
