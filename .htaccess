@@ -1,0 +1,5 @@
+# Apache配置文件
+RewriteEngine On
+# 安全规则(必选)
+RewriteRule ^templates/.*\.(php|tar|gz|zip|info|log|json)$ - [F]
+RewriteRule ^data/.*\.(db|db3|php|sql|tar|gz|zip|info|log|json)$ - [F]
